@@ -3,77 +3,48 @@
 <head>
   <meta charset="utf-8">
   <title>Rock paper scissors</title>
- 
 </head>
 <body>
+   <div id="container">
+      <div id = 'results'>
+         <h1 class = 'resultsTitle'>Rock, Paper Scissors</h1>
+         
+         
 
-</body>
-<script>
-const options = ["rock", "paper", "scissors"];
-function getComputerChoice() {
-  const choice = options[Math.floor(Math.random() * options.length)];
-  return choice;
-}
-
-
-function playRound(playerSelection, computerSelection) {
-   if (playerSelection === computerSelection) {
-     draws++;
-   return `It's a tie! You both picked ${playerSelection}`;
-   } else if (playerSelection === "rock" && computerSelection === "scissors") {
-      userScore++;
-   return "You win! Rock beats scissors";
-   } else if (playerSelection === "paper" && computerSelection === "rock") {
-      userScore++;
-   return "You win! Paper beats Rock";
-   } else if (playerSelection === "scissors" && computerSelection === "paper") {
-      userScore++;
-   return "You win! Scissors beats paper";
-   } else {
-      computerScore++;
-   }
-   return `You lose, ${computerSelection} beats ${playerSelection}`;
-}
+         <h2 class = 'roundWinner'></h2>
+         <h2 class = 'round'>Round: <span class ='displayRoundNum'></span></h2>
+         <h2 class = 'user'>User Score: <span class = 'displayUserScore'></span></h2>
+         <h2 class = 'computer'>Computer Score: <span class = 'displayComputerScore'></span></h2>
+         <h2 class = 'draws'>Draws: <span class = 'displayDraws'></span></h2> 
+         <h2 class = 'finalScore'></h2>
 
 
 
-function game() {
-   for (let i = 0; i < 4; i++) {
-      const computerSelection = getComputerChoice();
-      console.log("Current score");
-      console.log("Computer " +computerScore);
-      console.log("User " +userScore);
-      console.log("Draws  " +draws +" \n -------");
-      let playerSelection = prompt("Rock, Paper or Scissors?");
-      console.log ("You chose " +playerSelection.toLowerCase());
-      console.log("The computer chose " +computerSelection);
-      console.log(playRound(playerSelection, computerSelection));
-   }
-      if (userScore>computerScore){
-         return "You Win this game.\n -------";
-   }
-      if (userScore==computerScore){
-       return "This game is a tie.\n -------";
-     }
-      else{
-         return "You Lose this game.\n -------";
-   }
 
-}
 
-let computerScore = 0;
-let userScore = 0;
-let draws = 0;
 
-let playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
-console.log ("You choose " +playerSelection.toLowerCase());
-const computerSelection = getComputerChoice();
-console.log("The computer chose " +computerSelection);
-console.log(playRound(playerSelection, computerSelection));
-game();
-console.log( "Game over! Your final score is user " +userScore +", computer " +computerScore +" and " +draws +" ties.");
+
+      </div>
+      <button class="gameBtn" value="rock">rock</button>
+      <button class="gameBtn" value="paper">paper</button>
+      <button class="gameBtn" value="scissors">scissors</button>
+   </div>
+<script src="rps.js" defer>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </script>
+</body>
 </html>
 
 
